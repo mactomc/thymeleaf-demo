@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+
+
+    <title>Cats</title>
+</head>
+<body>
+<div>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+        <tr th:each="cat: ${cats}">
+            <td th:text="${cat.name}" />
+            <td th:text="${cat.age}" />
+        </tr>
+    </table>
+    <input type="submit" value="Add cat"
+           onclick="window.location='/addCat';" />
+
+    <input type="submit" value="Delete cat"
+           onclick="window.location='/cats/delete';" />
+</div>
+</body>
+</html>
